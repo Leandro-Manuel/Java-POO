@@ -1,7 +1,7 @@
 package br.com.alura.screenmatch.exercicios.atividade3;
 
 public class ContaBancaria {
-    private String titular;
+    protected String titular;
     protected double saldo;
 
     public ContaBancaria(String titular, double saldo) {
