@@ -1,4 +1,4 @@
-package br.com.alura.screenmatch.exercicios.atividades8;
+package br.com.alura.screenmatch.exercicios.atividade8;
 
 public class ConversorTemperaturaPadrao implements ConversorTemperatura{
 
