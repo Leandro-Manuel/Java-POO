@@ -16,7 +16,7 @@ public class Servico implements Vendavel{
         System.out.println("\n------------------");
         System.out.println("Nome do serviço: " + this.nome);
         System.out.println("Quantidade do serviço: " + this.quantidade);
-        System.out.println("Preço final dos serviços: R$ " + this.valor * this.quantidade);
+        System.out.println("Preço final dos serviços: R$ \n" + this.valor * this.quantidade);
         System.out.println("------------------\n");
     }
 }
