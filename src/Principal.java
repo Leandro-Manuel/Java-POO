@@ -1,4 +1,6 @@
 import br.com.alura.screenmatch.calculo.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculo.FiltroRecomendacao;
+import br.com.alura.screenmatch.modelo.Episodio;
 import br.com.alura.screenmatch.modelo.Filme;
 import br.com.alura.screenmatch.modelo.Serie;
 import br.com.alura.screenmatch.modelo.Titulo;
@@ -41,6 +43,16 @@ public class Principal {
         calculadora.inclui(outroFilme);
         calculadora.inclui(lost);
         System.out.println("Minutos totais: " + calculadora.getTempo());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtro(filme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNome("Piloto");
+        episodio.setNumero(1);
+        episodio.setSerie(lost);
+        episodio.setTotalVisualizacoes(1001);
+        filtro.filtro(episodio);
 
 
     }
