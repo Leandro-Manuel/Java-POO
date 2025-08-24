@@ -1,3 +1,5 @@
+package br.com.alura.screenmatch.principal;
+
 import br.com.alura.screenmatch.calculo.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculo.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelo.Episodio;
@@ -9,9 +11,7 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme filme = new Filme();
-        filme.setNome("Como treinar o seu dragão");
-        filme.setAnoDeLancamento(2018);
+        Filme filme = new Filme("Como treinar o seu dragão", 2018);
         filme.setDiretor("Leandro Manuel");
         filme.setAutor("James Gosling");
         filme.setDuracaoMinutos(180);
@@ -24,16 +24,12 @@ public class Principal {
         System.out.println("quantidade de avaliações: " + filme.getTotalAvaliacao());
         System.out.println("Média de avaliação do filme: " + filme.pegarMedia());
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("BladeRunner");
-        outroFilme.setAnoDeLancamento(2014);
+        Filme outroFilme = new Filme("BladeRunner", 2014);
         outroFilme.setDiretor("Scotfield");
         outroFilme.setAutor("Disney");
         outroFilme.setDuracaoMinutos(100);
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost",2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
@@ -56,9 +52,7 @@ public class Principal {
         episodio.setTotalVisualizacoes(1001);
         filtro.filtro(episodio);
 
-        Filme outroFilme3 = new Filme();
-        outroFilme3.setNome("Procurando Nemo");
-        outroFilme3.setAnoDeLancamento(2000);
+        Filme outroFilme3 = new Filme("Procurando Nemo", 2000);
         outroFilme3.setDiretor("Leandro");
         outroFilme3.setAutor("Pixar");
         outroFilme3.setDuracaoMinutos(120);

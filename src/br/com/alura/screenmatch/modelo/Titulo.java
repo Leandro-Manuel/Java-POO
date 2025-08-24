@@ -7,9 +7,12 @@ public class Titulo {
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalAvaliacao;
-
     private int duracaoMinutos;
 
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
 
     public void exibeFichaTecnica() {
         System.out.println("Nome do filme: " + nome);
