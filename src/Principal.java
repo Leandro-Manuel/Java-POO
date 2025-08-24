@@ -5,6 +5,8 @@ import br.com.alura.screenmatch.modelo.Filme;
 import br.com.alura.screenmatch.modelo.Serie;
 import br.com.alura.screenmatch.modelo.Titulo;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Filme filme = new Filme();
@@ -53,6 +55,21 @@ public class Principal {
         episodio.setSerie(lost);
         episodio.setTotalVisualizacoes(1001);
         filtro.filtro(episodio);
+
+        Filme outroFilme3 = new Filme();
+        outroFilme3.setNome("Procurando Nemo");
+        outroFilme3.setAnoDeLancamento(2000);
+        outroFilme3.setDiretor("Leandro");
+        outroFilme3.setAutor("Pixar");
+        outroFilme3.setDuracaoMinutos(120);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filme);
+        listaDeFilmes.add(outroFilme);
+        listaDeFilmes.add(outroFilme3);
+        System.out.println("quantidade de filmes: " + listaDeFilmes.size());
+        System.out.println(listaDeFilmes);
+        System.out.println("Primeiro filme: " + listaDeFilmes.get(0).toString());
 
 
     }
