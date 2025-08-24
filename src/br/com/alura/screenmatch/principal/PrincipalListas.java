@@ -4,6 +4,8 @@ import br.com.alura.screenmatch.modelo.Serie;
 import br.com.alura.screenmatch.modelo.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalListas {
     public static void main(String[] args) {
@@ -27,6 +29,14 @@ public class PrincipalListas {
                 System.out.println("Classificacao: " + film.getClassificacao());
             }
         }
+        Collections.sort(lista);
+        System.out.println(lista);
+
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano:");
+        System.out.println(lista);
+
+
 
     }
 }
