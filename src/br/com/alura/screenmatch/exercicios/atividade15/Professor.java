@@ -35,4 +35,16 @@ public class Professor extends Pessoa{
             System.out.println("Aluno: " + aluno.getNome());
         }
     }
+
+    private int qtdAlunos() {
+        return this.turma.size();
+    }
+
+    @Override
+    public void info() {
+        System.out.println("Nome do Professor: " + getNome());
+        System.out.println("Idade: " + getIdade());
+        System.out.println("Matéria: " + getMateria());
+        System.out.println("Quantidade de alunos na matéria: " + qtdAlunos());
+    }
 }

@@ -16,4 +16,6 @@ public abstract class Pessoa {
     public int getIdade() {
         return this.idade;
     }
+
+    public abstract void info();
 }
