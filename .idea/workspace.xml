@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95ab8f00-dca3-46b0-a8bb-6aed0d8d0d1a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/br/com/alura/screenmatch/exercicios/AtividadesAPIs/Principal1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/br/com/alura/screenmatch/exercicios/AtividadesAPIs/Principal2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/br/com/alura/screenmatch/principal/PrincipalAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/br/com/alura/screenmatch/exercicios/AtividadesAPIs/Principal3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +47,7 @@
     "Application.Principal.executor": "Run",
     "Application.Principal1.executor": "Run",
     "Application.Principal2.executor": "Run",
+    "Application.Principal3.executor": "Run",
     "Application.PrincipalAPI.executor": "Run",
     "Application.PrincipalListas.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
