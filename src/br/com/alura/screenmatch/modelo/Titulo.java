@@ -11,6 +11,7 @@ public class Titulo implements Comparable<Titulo>{
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalAvaliacao;
+    @SerializedName("Runtime")
     private int duracaoMinutos;
 
     public Titulo(String nome, int anoDeLancamento) {
