@@ -5,6 +5,7 @@ package br.com.alura.screenmatch.principal;
 // para transformar um json em objetos importamos uma biblioteca do google: Gson, no site mvn repository
 // baixamos o jar do Gson
 
+import br.com.alura.screenmatch.excecao.ErroDeConversaoDeAno;
 import br.com.alura.screenmatch.modelo.Titulo;
 import br.com.alura.screenmatch.modelo.TituloOmdb;
 import com.google.gson.FieldNamingPolicy;
@@ -23,21 +24,34 @@ public class PrincipalAPI {
         var scanner = new Scanner(System.in);
         System.out.print("Digite o nome do filme: ");
         String nomeDoFilme = scanner.nextLine();
-        String requisicao = "https://www.omdbapi.com/?t=" + nomeDoFilme + "&apikey=a8824027";
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(requisicao))
-                .build();
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
-        String json = response.body();
-        System.out.println(json);
+        String requisicao = "https://www.omdbapi.com/?t=" + nomeDoFilme.replace(" ", "+") + "&apikey=a8824027";
+        try {
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(requisicao))
+                    .build();
+            HttpResponse<String> response = client
+                    .send(request, HttpResponse.BodyHandlers.ofString());
+            String json = response.body();
+            System.out.println(json);
 
-        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                .create();
-        TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
-        System.out.println(meuTituloOmdb);
-        Titulo meuTitulo = new Titulo(meuTituloOmdb);
-        System.out.println("Convertido: " + meuTitulo);
+            Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                    .create();
+            TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
+            System.out.println(meuTituloOmdb);
+
+            Titulo meuTitulo = new Titulo(meuTituloOmdb);
+
+            System.out.println("Convertido: " + meuTitulo);
+
+        } catch (NumberFormatException e) {
+            System.out.println("Aconteceu um erro: ");
+            System.out.println(e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro de argumento na busca");
+        } catch(ErroDeConversaoDeAno e) {
+            System.out.println(e.getMensagem());
+        }
+        System.out.println("O programa finalizou corretamente!");
     }
 }
